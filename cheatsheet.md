@@ -131,6 +131,18 @@ for handle in handles {
 
 println!("rwlock: {}", *rwlock.read().unwrap());
 ```
+### Comparison Table
+
+| Type        | Thread Safety | Interior Mutability | Reference Counting | Use Case                              |
+|-------------|----------------|---------------------|--------------------|---------------------------------------|
+| `Box<T>`    | No             | No                  | No                 | Heap allocation                      |
+| `Rc<T>`     | No             | No                  | Yes                | Shared ownership (single-threaded)    |
+| `Arc<T>`    | Yes            | No                  | Yes                | Shared ownership (multi-threaded)     |
+| `RefCell<T>`| No             | Yes                 | No                 | Interior mutability (single-threaded) |
+| `Cell<T>`   | No             | Yes (for `Copy` types) | No             | Interior mutability for `Copy` types  |
+| `Mutex<T>`  | Yes            | Yes                 | No                 | Thread-safe interior mutability       |
+| `RwLock<T>` | Yes            | Yes                 | No                 | Thread-safe multiple readers/single writer |
+
 
 ### Summary
 
