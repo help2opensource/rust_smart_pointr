@@ -132,13 +132,15 @@ for handle in handles {
 println!("rwlock: {}", *rwlock.read().unwrap());
 ```
 
-**`Box<T>: Use for heap allocation.`
-**`Rc<T>: Use for multiple ownership in single-threaded contexts.`
-**`Arc<T>: Use for multiple ownership in multi-threaded contexts.`
-**`RefCell<T>: Use for single-threaded interior mutability with runtime borrow checking.`
-**`Cell<T>: Use for single-threaded interior mutability for Copy types.`
-**`Mutex<T>: Use for thread-safe interior mutability.`
-**`RwLock<T>: Use for thread-safe multiple readers or single writer.`
+### Summary
+
+- **`Box<T>`**: Use for heap allocation.
+- **`Rc<T>`**: Use for multiple ownership in single-threaded contexts.
+- **`Arc<T>`**: Use for multiple ownership in multi-threaded contexts.
+- **`RefCell<T>`**: Use for single-threaded interior mutability with runtime borrow checking.
+- **`Cell<T>`**: Use for single-threaded interior mutability for `Copy` types.
+- **`Mutex<T>`**: Use for thread-safe interior mutability.
+- **`RwLock<T>`**: Use for thread-safe multiple readers or single writer.
 
 
 
